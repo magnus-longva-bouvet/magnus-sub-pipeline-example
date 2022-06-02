@@ -7,4 +7,6 @@ spec:
     - name: say-hello
       image: alpine
       command:
-        - echo "Hello"
+        - echo
+      args:
+        - "Hello"
