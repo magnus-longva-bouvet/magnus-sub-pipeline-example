@@ -1,0 +1,22 @@
+apiVersion: radix.equinor.com/v1
+kind: RadixApplication
+metadata:
+  name: radix-sub-pipeline-example
+spec:
+  environments:
+    - name: dev
+      build:
+        from: main
+    - name: prod
+      build:
+        from: release
+  components:
+    - name: frontend
+      src: frontend
+      ports:
+        - name: http
+          port: 8001
+      publicPort: http
+  dnsAppAlias:
+    environment: prod
+    component: frontend
