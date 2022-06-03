@@ -4,24 +4,24 @@ metadata:
   name: pipeline-with-multiple-steps
 spec:
   tasks:
-    - name: task-example-hello
+    - name: show-hello
       taskRef:
         name: hello
 
-    - name: task-example-goodbye
+    - name: show-goodbye
       runAfter:
-        - task-example-numbers
-        - task-example-letters
+        - show-numbers
+        - show-letters
       taskRef:
         name: goodbye
 
-    - name: task-example-letters
+    - name: show-letters
       runAfter:
-        - hello
+        - show-hello
       taskRef:
         name: letters
-    - name: task-example-numbers
+    - name: show-numbers
       runAfter:
-        - hello
+        - show-hello
       taskRef:
         name: numbers
