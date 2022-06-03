@@ -13,7 +13,7 @@ spec:
         - pipeline-with-multiple-task-steps
         - /var/source
       volumeMounts:
-        - name: sourceVolume
+        - name: source-volume
           mountPath: /var/source
       onError: continue
 
@@ -23,10 +23,10 @@ spec:
         ls -la /var/source
         cat /var/source/radixconfig.yaml
       volumeMounts:
-        - name: sourceVolume
+        - name: source-volume
           mountPath: /var/source
       onError: continue
 
   volumes:
-    - name: sourceVolume
+    - name: source-volume
       emptyDir: {}
