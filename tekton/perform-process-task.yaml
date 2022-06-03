@@ -5,8 +5,28 @@ metadata:
 spec:
   steps:
     - name: clone-repo
-      image: git
+      image: alpine/git
       args:
         - clone
-        -
+        - https://github.com/equinor/radix-sub-pipeline-example
+        - -b
+        - pipeline-with-multiple-task-steps
+        - /var/source
+      volumeMounts:
+        - name: sourceVolume
+          mountPath: /var/source
+      onError: continue
 
+    - image: ubuntu
+      script: |
+        #!/usr/bin/env bash
+        ls -la /var/source
+        cat /var/source/radixconfig.yaml
+      volumeMounts:
+        - name: sourceVolume
+          mountPath: /var/source
+      onError: continue
+
+  volumes:
+    - name: sourceVolume
+      emptyDir: {}
