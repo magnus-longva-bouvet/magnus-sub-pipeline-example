@@ -1,0 +1,15 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: numbers
+spec:
+  steps:
+    - name: say-numbers
+      image: alpine
+      script: |
+        #!/bin/bash
+        for i in {"one","two","three","four","five","six","seven","eight","nine","ten"}; \
+        do echo $i; \
+        sleep 1; \
+        done
+        echo "Done"

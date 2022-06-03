@@ -1,0 +1,15 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: letters
+spec:
+  steps:
+    - name: say-letters
+      image: alpine
+      script: |
+        #!/bin/bash
+        for i in {"a","b","c","d","e"}; \
+        do echo $i; \
+        sleep 1; \
+        done
+        echo "Done"

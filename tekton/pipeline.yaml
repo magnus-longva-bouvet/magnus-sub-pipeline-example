@@ -1,9 +1,27 @@
 apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
-  name: pipeline-example
+  name: pipeline-with-multiple-steps
 spec:
   tasks:
     - name: task-example-hello
       taskRef:
         name: hello
+
+    - name: task-example-goodbye
+      runAfter:
+        - numbers
+        - letters
+      taskRef:
+        name: goodbye
+
+    - name: say-letters
+      runAfter:
+        - hello
+      taskRef:
+        name: letters
+    - name: say-numbers
+      runAfter:
+        - hello
+      taskRef:
+        name: numbers

@@ -6,10 +6,7 @@ spec:
   environments:
     - name: dev
       build:
-        from: simple-pipeline
-    - name: prod
-      build:
-        from: release
+        from: pipeline-with-multiple-steps
   components:
     - name: frontend
       src: frontend
