@@ -15,5 +15,5 @@ spec:
           port: 8001
       publicPort: http
   dnsAppAlias:
-    environment: prod
+    environment: dev
     component: frontend
