@@ -10,17 +10,17 @@ spec:
 
     - name: task-example-goodbye
       runAfter:
-        - say-numbers
-        - say-letters
+        - task-example-numbers
+        - task-example-letters
       taskRef:
         name: goodbye
 
-    - name: say-letters
+    - name: task-example-letters
       runAfter:
         - hello
       taskRef:
         name: letters
-    - name: say-numbers
+    - name: task-example-numbers
       runAfter:
         - hello
       taskRef:
