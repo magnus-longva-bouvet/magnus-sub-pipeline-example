@@ -15,18 +15,15 @@ spec:
       volumeMounts:
         - name: source-volume
           mountPath: /var/source
-      onError: continue
 
-    - image: ubuntu
+    - name: check
+      image: alpine
       script: |
-        #!/usr/bin/env bash
+        #!/usr/bin/env sh
         ls -la /var/source
-        cat /var/source/radixconfig.yaml
       volumeMounts:
         - name: source-volume
           mountPath: /var/source
-      onError: continue
-
   volumes:
     - name: source-volume
       emptyDir: {}
