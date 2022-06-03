@@ -5,7 +5,7 @@ metadata:
 spec:
   steps:
     - name: say-goodbye
-      image: python
+      image: python:alpine
       command:
         - python
       args:
