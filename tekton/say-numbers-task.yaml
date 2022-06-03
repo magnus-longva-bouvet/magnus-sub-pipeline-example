@@ -8,8 +8,8 @@ spec:
       image: alpine
       script: |
         #!/bin/sh
-        for i in {"one","two","three","four","five","six","seven","eight","nine","ten"}; \
-        do echo $i; \
-        sleep 1; \
+        for i in "one" "two" "three" "four" "five" "six" "seven" "eight" "nine" "ten"
+          do echo $i
+          sleep 1
         done
         echo "Done"
