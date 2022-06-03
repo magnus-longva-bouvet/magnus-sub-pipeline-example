@@ -7,7 +7,7 @@ spec:
     - name: say-letters
       image: alpine
       script: |
-        #!/bin/bash
+        #!/bin/sh
         for i in {"a","b","c","d","e"}; \
         do echo $i; \
         sleep 1; \

@@ -7,7 +7,7 @@ spec:
     - name: say-numbers
       image: alpine
       script: |
-        #!/bin/bash
+        #!/bin/sh
         for i in {"one","two","three","four","five","six","seven","eight","nine","ten"}; \
         do echo $i; \
         sleep 1; \
