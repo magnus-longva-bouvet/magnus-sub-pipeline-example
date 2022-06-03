@@ -1,3 +1,3 @@
 #Example of a Radix application with sub-pipelines
 
-Sub-pipeline: simple pipeline with one task.
+Sub-pipeline: pipeline with multiple task steps.

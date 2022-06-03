@@ -1,0 +1,12 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: process
+spec:
+  steps:
+    - name: clone-repo
+      image: git
+      args:
+        - clone
+        -
+

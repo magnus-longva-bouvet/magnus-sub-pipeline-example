@@ -1,7 +1,7 @@
 apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
-  name: pipeline-with-multiple-steps
+  name: pipeline-with-multiple-task-steps
 spec:
   tasks:
     - name: show-hello
@@ -15,13 +15,8 @@ spec:
       taskRef:
         name: goodbye
 
-    - name: show-letters
+    - name: perform-process
       runAfter:
         - show-hello
       taskRef:
-        name: letters
-    - name: show-numbers
-      runAfter:
-        - show-hello
-      taskRef:
-        name: numbers
+        name: process
