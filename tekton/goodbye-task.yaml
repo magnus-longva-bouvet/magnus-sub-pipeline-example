@@ -5,7 +5,7 @@ metadata:
 spec:
   steps:
     - name: say-goodbye
-      image: docker.io/library/python:alpine
+      image: python:alpine
       command:
         - python
       args:
