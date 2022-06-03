@@ -10,8 +10,8 @@ spec:
 
     - name: task-example-goodbye
       runAfter:
-        - numbers
-        - letters
+        - say-numbers
+        - say-letters
       taskRef:
         name: goodbye
 
