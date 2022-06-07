@@ -15,6 +15,7 @@ spec:
       volumeMounts:
         - name: source-volume                                   #using an empty volume, shared between this task steps
           mountPath: /var/source                                #path, where the common empty volume is mapped
+
     - name: show-repo                                           #step to process the repository. cloned in the "clone-repo" step
       image: alpine                                             #run a sh-script within a Alpine Linux container
                                                                 #"process" the cloned repository - here just show its folder
