@@ -4,18 +4,6 @@ metadata:
   name: pipeline-with-multiple-task-steps
 spec:
   tasks:
-    - name: show-hello
-      taskRef:
-        name: hello
-
-    - name: show-goodbye
-      runAfter:
-        - process-repo
-      taskRef:
-        name: goodbye
-
     - name: process-repo
-      runAfter:
-        - show-hello
       taskRef:
         name: process
