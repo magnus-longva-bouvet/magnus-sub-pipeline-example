@@ -10,12 +10,11 @@ spec:
 
     - name: show-goodbye
       runAfter:
-        - show-numbers
-        - show-letters
+        - process-repo
       taskRef:
         name: goodbye
 
-    - name: perform-process
+    - name: process-repo
       runAfter:
         - show-hello
       taskRef:
