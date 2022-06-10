@@ -3,13 +3,15 @@ kind: RadixApplication
 metadata:
   name: radix-sub-pipeline-example
 spec:
+  build:
+    variables:
+      VAR1: value1     #it must be set, as it is expected by the pipeline
+      VAR2: value2     #it can be set, if it does not exist - the pipeline will set default value
+      VAR100: value100 #it is not used in the pipeline and its tasks
   environments:
     - name: dev
       build:
-        from: main
-    - name: prod
-      build:
-        from: release
+        from: pipeline-example-with-env-vars
   components:
     - name: frontend
       src: frontend
@@ -18,5 +20,5 @@ spec:
           port: 8001
       publicPort: http
   dnsAppAlias:
-    environment: prod
+    environment: dev
     component: frontend

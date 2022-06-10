@@ -1,3 +1,3 @@
 #Example of a Radix application with sub-pipelines
 
-Base application
+Sub-pipeline: simple pipeline with environment variables.

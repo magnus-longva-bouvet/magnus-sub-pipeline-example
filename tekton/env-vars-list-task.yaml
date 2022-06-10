@@ -1,0 +1,42 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: env-vars-list
+spec:
+  params:
+    - name: VAR1T                 #it must be set in a pipeline's task params, because it does not have default value
+    - name: VAR2T                 #it can be set in a pipeline's task params, if not - used default "not-set-var2-in-task"
+      default:
+        type: string
+        stringVal: not-set-var2-in-task
+    - name: VAR3T                 #it can be set in a pipeline's task params, if not - used default "not-set-var3-in-task"
+      default:
+        type: string
+        stringVal: not-set-var3-in-task
+    - name: VAR4T                 #it can be set in a pipeline's task params, if not - used default "not-set-var4-in-task"
+      default:
+        type: string
+        stringVal: not-set-var4-in-task
+    - name: VAR5T                 #it can be set in a pipeline's task params, if not - used default "not-set-var5-in-task"
+      default:
+        type: string
+        stringVal: not-set-var5-in-task
+  steps:
+    - name: show-env-vars-list
+      image: alpine
+      env:
+        - name: VAR1example
+          value: $(params.VAR1T)  #set by parameter VAR1T
+        - name: VAR2example
+          value: $(params.VAR2T)  #set by parameter VAR2T
+        - name: VAR3example
+          value: $(params.VAR3T)  #set by parameter VAR3T
+        - name: VAR4example
+          value: $(params.VAR4T)  #set by parameter VAR4T
+        - name: VAR5example
+          value: $(params.VAR5T)  #set by parameter VAR5T
+        - name: VAR6example
+          value: "value6"         #set explicitly with the value "value6"
+      script: |
+        #!/usr/bin/env sh
+        printenv | grep 'VAR'
