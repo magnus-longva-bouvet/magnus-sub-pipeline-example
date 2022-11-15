@@ -10,6 +10,9 @@ spec:
     - name: prod
       build:
         from: release
+    - name: no-subpipelines
+      build:
+        from: no-subpipelines
   components:
     - name: frontend
       src: frontend
