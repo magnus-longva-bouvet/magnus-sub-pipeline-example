@@ -22,6 +22,7 @@ spec:
       script: |
         #!/usr/bin/env sh
         ls -la /var/cloned-repo/branch
+        echo "this is hardcoded to main branch"
       volumeMounts:
         - name: source-volume                                   #using the same volume, used in the step "clone-repo"
           mountPath: /var/cloned-repo                           #mount this volume to a folder "/var/cloned-repo"
