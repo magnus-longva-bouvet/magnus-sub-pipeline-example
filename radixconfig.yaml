@@ -6,7 +6,7 @@ spec:
   environments:
     - name: dev
       build:
-        from: pipeline-with-multiple-task-steps
+        from: main
   components:
     - name: frontend
       src: frontend
