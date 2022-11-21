@@ -40,4 +40,4 @@ spec:
       script: |
         #!/usr/bin/env sh
         printenv | grep 'VAR'
-        echo "parent commit is 10b3869cb470cb0975f98175973c925ed17d54c3"
+        echo "parent commit is 9a2c5c79f41fb969274672df0896a84b23d82e21"
